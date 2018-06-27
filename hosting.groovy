@@ -37,3 +37,4 @@ map.each() { p ->
             shell('echo hallo')
         }
       }
+}

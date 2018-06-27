@@ -34,6 +34,6 @@ map.each() { p ->
         }
 
         steps {
-            shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} \"cd ${deployLocation} && git fetch && git reset --hard\"")
+            shell("echo hallo")
         }
       }

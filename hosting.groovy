@@ -1,6 +1,9 @@
 
-@Grab(group='org.yaml', module='snakeyaml', version='1.17')
-//import org.yaml.snakeyaml.Yaml
+@Grapes([
+    @Grab(group='org.yaml', module='snakeyaml', version='1.17')
+])
+
+import org.yaml.snakeyaml.Yaml
 
 def project = 'hosting'
 folder("${project}")
@@ -8,7 +11,7 @@ folder("${project}")
 configFile = readFileFromWorkspace('cfg/hosting.yaml')
 
 def map
-Yaml configFileYaml = new Yaml()
+configFileYaml = new Yaml()
 map = configFileYaml.load(configFile)
 
 map.each() { p ->

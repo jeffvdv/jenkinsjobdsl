@@ -1,2 +1,2 @@
 /* Init */
-folder("puppetry")
+folder("hosting")

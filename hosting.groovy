@@ -28,11 +28,6 @@ map.each() { p ->
             artifactNumToKeep(10)
         }
 
-        blockOn("${project}/${projectname}.*") {
-            blockLevel('GLOBAL')
-            scanQueueFor('ALL')
-        }
-
         scm {
             git("${gitlocation}", "${branch}")
             }

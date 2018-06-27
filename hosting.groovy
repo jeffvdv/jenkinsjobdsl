@@ -23,7 +23,12 @@ map.each() { p ->
     def deployLocation = p.deployLocation
 
     job("${projecttitle}/${projectname}") {
-      steps {
+    
+    scm {
+        git("${gitlocation}", "${branch}")
+    }
+
+    steps {
           shell('echo Hello World!')
       }
     }

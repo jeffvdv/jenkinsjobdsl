@@ -33,8 +33,8 @@ map.each() { p ->
             }
         }
 
-        steps {
+        steps { 
+            shell("echo test")
             shell('echo hallo')
         }
       }
-}

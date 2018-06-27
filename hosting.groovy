@@ -22,6 +22,11 @@ map.each() { p ->
     def branch = p.branch
     def deployLocation = p.deployLocation
 
+    job('example-1') {
+      steps {
+          shell('echo Hello World!')
+      }
+    }
     job("${project}/${projectname}") {
         logRotator {
             numToKeep(5)

@@ -5,7 +5,7 @@
 
 import org.yaml.snakeyaml.Yaml
 
-def project = 'hosting'
+def projecttitle = 'hosting'
 folder("${project}")
 
 configFile = readFileFromWorkspace('cfg/hosting.yaml')
@@ -15,20 +15,20 @@ Yaml configFileYaml = new Yaml()
 map = configFileYaml.load(configFile)
 
 map.each() { p ->
-    def projectname = p.project
+    def projectname = p.projectname
     def gitlocation = p.gitlocation
     def environment = p.environment
     def deployServer = p.deployServer
     def branch = p.branch
     def deployLocation = p.deployLocation
 
-    job("${project}/${projectname}") {
+    job("/${projectname}") {
       steps {
           shell('echo Hello World!')
       }
     }
 }
-    /*job("${project}/${projectname}") {
+    /*job("${projecttitle}/${projectname}") {
         logRotator {
             numToKeep(5)
             artifactNumToKeep(10)

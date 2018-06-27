@@ -27,6 +27,7 @@ map.each() { p ->
           shell('echo Hello World!')
       }
     }
+}
     /*job("${project}/${projectname}") {
         logRotator {
             numToKeep(5)

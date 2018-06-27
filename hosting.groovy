@@ -11,7 +11,7 @@ folder("${project}")
 configFile = readFileFromWorkspace('cfg/hosting.yaml')
 
 def map
-configFileYaml = new Yaml()
+Yaml configFileYaml = new Yaml()
 map = configFileYaml.load(configFile)
 
 map.each() { p ->

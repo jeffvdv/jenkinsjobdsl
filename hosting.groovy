@@ -32,9 +32,6 @@ map.each() { p ->
             git("${gitlocation}", "${branch}")
             }
         }
-        triggers {
-            scm('H/5 * * * *')
-        }
 
         steps {
 //            shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} \"cd ${deployLocation} && git fetch && git reset --hard\"")

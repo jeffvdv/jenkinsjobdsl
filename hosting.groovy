@@ -34,6 +34,6 @@ map.each() { p ->
         }
 
         steps {
-            shell("echo hallo")
+            shell('echo hallo')
         }
       }

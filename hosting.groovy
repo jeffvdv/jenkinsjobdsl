@@ -1,8 +1,6 @@
-/* @Grapes(
-        ·ck
-    @Grab(group='org.yaml', module='snakeyaml', version='1.17')
-)*/
-import org.yaml.snakeyaml.Yaml
+
+@Grab(group='org.yaml', module='snakeyaml', version='1.17')
+//import org.yaml.snakeyaml.Yaml
 
 def project = 'hosting'
 folder("${project}")

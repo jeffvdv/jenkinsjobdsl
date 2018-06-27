@@ -6,7 +6,7 @@
 import org.yaml.snakeyaml.Yaml
 
 def projecttitle = 'hosting'
-folder("${project}")
+folder("${projecttitle}")
 
 configFile = readFileFromWorkspace('cfg/hosting.yaml')
 

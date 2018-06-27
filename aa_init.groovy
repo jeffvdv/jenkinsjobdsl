@@ -1,0 +1,2 @@
+/* Init */
+folder("puppetry")

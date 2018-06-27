@@ -27,7 +27,7 @@ map.each() { p ->
           shell('echo Hello World!')
       }
     }
-    job("${project}/${projectname}") {
+    /*job("${project}/${projectname}") {
         logRotator {
             numToKeep(5)
             artifactNumToKeep(10)
@@ -42,4 +42,4 @@ map.each() { p ->
             shell("echo test")
             shell('echo hallo')
         }
-      }
+      }*/

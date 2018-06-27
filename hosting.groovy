@@ -22,7 +22,7 @@ map.each() { p ->
     def branch = p.branch
     def deployLocation = p.deployLocation
 
-    job('example-1') {
+    job("${project}/${projectname}") {
       steps {
           shell('echo Hello World!')
       }

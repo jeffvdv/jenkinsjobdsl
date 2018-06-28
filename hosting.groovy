@@ -5,7 +5,6 @@
 import org.yaml.snakeyaml.Yaml
 
 def projecttitle = 'hosting'
-folder("${projecttitle}")
 
 configFile = readFileFromWorkspace('cfg/hosting.yaml')
 
@@ -24,10 +23,15 @@ map.each() { p ->
     if ("${environment}" == 'production'){
       fabDeploy = p.fabDeploy
     }
-    job("${projecttitle}/${projectname}") {
+
+    folder("${projecttitle} - ${environment}")
+
+    job("${projecttitle} - ${environment}/${projectname}") {
     
-    scm {
-        git("${gitlocation}", "${branch}")
+    if (!"${environment}" == 'production'){
+       scm {
+           git("${gitlocation}", "${branch}")
+       }
     }
 
     steps {

@@ -47,7 +47,7 @@ map.each() { p ->
         if ("${environment}" != 'production'){
            scm {
                 git {
-                   branch("$branchname")
+                   branch("${branchname}")
                    remote {
                       credentials("github")
                       url("${gitlocation}")

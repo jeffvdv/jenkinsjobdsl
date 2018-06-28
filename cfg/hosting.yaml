@@ -3,11 +3,11 @@
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
     - name:  development
-      branch:  unstable
+      branchname:  unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
     - name:  staging
-      branch:  master
+      branchname:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
     - name:  production
@@ -17,11 +17,11 @@
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
     - name: development
-      branch: unstable
+      branchname: unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
-    - name:  staging 
-      branch:  master
+    - name:  staging
+      branchname:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
     - name:  production
@@ -31,11 +31,11 @@
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
     - name:  development
-      branch:  unstable
+      branchname:  unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
     - name:  staging
-      branch:  master
+      branchname:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
     - name:  production
@@ -45,11 +45,11 @@
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
     - name:  development
-      branch:  unstable
+      branchname:  unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
     - name:  staging
-      branch:  master
+      branchname:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
     - name:  production

@@ -27,6 +27,13 @@ map.each() { p ->
     folder("${projecttitle} - ${environment}")
 
     job("${projecttitle} - ${environment}/${projectname}") {
+     
+    authorization {
+        permissions('hudson.model.Item.Workspace:authenticated', [
+            'hudson.model.Item.Build',
+            'hudson.model.Item.Read'
+        ])
+    }
     
     if ("${environment}" != 'production'){
        scm {

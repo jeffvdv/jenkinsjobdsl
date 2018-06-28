@@ -27,21 +27,21 @@ map.each() { p ->
     folder("${projecttitle} - ${environment}")
 
     job("${projecttitle} - ${environment}/${projectname}") {
-     
+
     authorization {
         permissions('authenticated', [
             'hudson.model.Item.Build',
             'hudson.model.Item.Read'
         ])
     }
-    
+
     if ("${environment}" != 'production'){
        scm {
             git {
+               branch("${branch}")
                remote {
                   url("${gitlocation}")
                }
-//               branch("${branch}")
             }
         }
 

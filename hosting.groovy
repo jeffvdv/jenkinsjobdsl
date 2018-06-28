@@ -39,6 +39,10 @@ map.each() { p ->
        scm {
            git("${gitlocation}", "${branch}")
        }
+
+       triggers {
+           githubPush()
+       }
     }
 
     steps {

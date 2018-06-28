@@ -40,6 +40,7 @@ map.each() { p ->
             git {
                branch("$branchname")
                remote {
+                  credentials("github")
                   url("${gitlocation}")
                }
             }

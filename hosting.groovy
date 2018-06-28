@@ -29,23 +29,7 @@ map.each() { p ->
     }
 
     steps {
-          shell('echo Hello World!')
+          shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} /"cd ${deployLocation} && git fetch && git reset --hard/"")
       }
     }
 }
-    /*job("${projecttitle}/${projectname}") {
-        logRotator {
-            numToKeep(5)
-            artifactNumToKeep(10)
-        }
-
-        scm {
-            git("${gitlocation}", "${branch}")
-            }
-        }
-
-        steps { 
-            shell("echo test")
-            shell('echo hallo')
-        }
-      }*/

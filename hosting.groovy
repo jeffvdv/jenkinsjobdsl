@@ -16,20 +16,26 @@ map.each() { p ->
     def projectname = p.projectname
     def gitlocation = p.gitlocation
     def environments = p.environments
-    def deployServer = p.deployServer
-    def branchname = p.branch
-    def deployLocation = p.deployLocation
-    def fabDeploy
 
     environments.each { env ->
+        def environment = env.name
+        def branchname
+        def deployServer = env.deployServer
+        def deployLocation
+        def fabDeploy
 
-        if ("${env}" == 'production'){
+        if ("${environment}" == 'production'){
           fabDeploy = p.fabDeploy
         }
+        else
+        {
+          branchname = env.branchname
+          deployLocation = env.deployLocation
+        }
 
-        folder("${projecttitle} - ${env}")
+        folder("${projecttitle} - ${environment}")
 
-        job("${projecttitle} - ${env}/${projectname}") {
+        job("${projecttitle} - ${environment}/${projectname}") {
 
         authorization {
             permissions('authenticated', [
@@ -38,7 +44,7 @@ map.each() { p ->
             ])
         }
 
-        if ("${env}" != 'production'){
+        if ("${environment}" != 'production'){
            scm {
                 git {
                    branch("$branchname")
@@ -55,7 +61,7 @@ map.each() { p ->
         }
 
         steps {
-              if ("${env}" == 'production'){
+              if ("${environment}" == 'production'){
                  shell("ssh -o StrictHostKeyChecking=no root@${deployServer} `fab ${fabDeploy} deploy restart`")
               } else {
                  shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} `cd ${deployLocation} && git fetch && git reset --hard`")

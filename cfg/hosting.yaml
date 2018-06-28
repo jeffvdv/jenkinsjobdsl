@@ -1,39 +1,57 @@
 ---
 - projectname: test1
   gitlocation: https://github.com/jeffvdv/testing.git
-  environments: [development,staging,production]
-  deployServer: 127.0.0.1
-  branch: master
-  deployLocation: /var/www/html/
+  environments:
+    - name: "development"
+      branch: "unstable"
+      deployLocation: /var/www/html/
+      deployServer: 127.0.0.1
+    - name: "staging"
+      branch: "master"
+      deployLocation: /data/site/html/
+      deployServer: 127.0.0.1
+    - name: "production"
+      fabDeploy: "testing"
+      deployServer: 127.0.0.1
 - projectname: test2
   gitlocation: https://github.com/jeffvdv/testing.git
-  environments: [development,staging,production]
-  deployServer: 127.0.0.1
-  branch: master
-  deployLocation: /var/www/html/
-  fabDeploy: testing
+  environments:
+    - name: "development"
+      branch: "unstable"
+      deployLocation: /var/www/html/
+      deployServer: 127.0.0.1
+    - name: "staging"
+      branch: "master"
+      deployLocation: /data/site/html/
+      deployServer: 127.0.0.1
+    - name: "production"
+      fabDeploy: "testing"
+      deployServer: 127.0.0.1
 - projectname: test3
   gitlocation: https://github.com/jeffvdv/testing.git
-  environments: [development,staging,production]
-  deployServer: 127.0.0.1
-  branch: master
-  deployLocation: /var/www/html/
+  environments:
+    - name: "development"
+      branch: "unstable"
+      deployLocation: /var/www/html/
+      deployServer: 127.0.0.1
+    - name: "staging"
+      branch: "master"
+      deployLocation: /data/site/html/
+      deployServer: 127.0.0.1
+    - name: "production"
+      fabDeploy: "testing"
+      deployServer: 127.0.0.1
 - projectname: test4
   gitlocation: https://github.com/jeffvdv/testing.git
-  environments: [development,staging,production]
-  deployServer: 127.0.0.1
-  branch: master
-  deployLocation: /var/www/html/
-- projectname: test5
-  gitlocation: https://github.com/jeffvdv/testing.git
-  environments: [development,staging,production]
-  deployServer: 127.0.0.1
-  branch: master
-  deployLocation: /var/www/html/
-- projectname: test6
-  gitlocation: https://github.com/jeffvdv/testing.git
-  environments: [development,staging,production]
-  deployServer: 127.0.0.1
-  branch: master
-  deployLocation: /var/www/html/
-  fabDeploy: testing2
+  environments:
+    - name: "development"
+      branch: "unstable"
+      deployLocation: /var/www/html/
+      deployServer: 127.0.0.1
+    - name: "staging"
+      branch: "master"
+      deployLocation: /data/site/html/
+      deployServer: 127.0.0.1
+    - name: "production"
+      fabDeploy: "testing"
+      deployServer: 127.0.0.1

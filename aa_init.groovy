@@ -1,2 +1,1 @@
 /* Init */
-folder("hosting")

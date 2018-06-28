@@ -29,7 +29,7 @@ map.each() { p ->
     job("${projecttitle} - ${environment}/${projectname}") {
      
     authorization {
-        permissions('hudson.model.Item.Workspace:authenticated', [
+        permissions('Authenticated Users', [
             'hudson.model.Item.Build',
             'hudson.model.Item.Read'
         ])

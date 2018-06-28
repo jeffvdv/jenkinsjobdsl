@@ -37,8 +37,13 @@ map.each() { p ->
     
     if ("${environment}" != 'production'){
        scm {
-           git("${gitlocation}", "${branch}")
-       }
+            git {
+               remote {
+                  url("${gitlocation}")
+               }
+               branch("${branch}")
+            }
+        }
 
        triggers {
            githubPush()

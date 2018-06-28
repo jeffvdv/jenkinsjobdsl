@@ -17,7 +17,7 @@ map.each() { p ->
     def gitlocation = p.gitlocation
     def environment = p.environment
     def deployServer = p.deployServer
-    def branch = p.branch
+    def branchname = p.branch
     def deployLocation = p.deployLocation
     def fabDeploy
     if ("${environment}" == 'production'){
@@ -38,7 +38,7 @@ map.each() { p ->
     if ("${environment}" != 'production'){
        scm {
             git {
-               branch("$branch")
+               branch("$branchname")
                remote {
                   url("${gitlocation}")
                }

@@ -2,56 +2,56 @@
 - projectname: test1
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
-    - name: "development"
-      branch: "unstable"
+    - name:  development
+      branch:  unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
-    - name: "staging"
-      branch: "master"
+    - name:  staging
+      branch:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
-    - name: "production"
-      fabDeploy: "testing"
+    - name:  production
+      fabDeploy:  testing
       deployServer: 127.0.0.1
 - projectname: test2
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
-    - name: "development"
-      branch: "unstable"
+    - name: development
+      branch: unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
-    - name: "staging"
-      branch: "master"
+    - name:  staging 
+      branch:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
-    - name: "production"
-      fabDeploy: "testing"
+    - name:  production
+      fabDeploy:  testing
       deployServer: 127.0.0.1
 - projectname: test3
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
-    - name: "development"
-      branch: "unstable"
+    - name:  development
+      branch:  unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
-    - name: "staging"
-      branch: "master"
+    - name:  staging
+      branch:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
-    - name: "production"
-      fabDeploy: "testing"
+    - name:  production
+      fabDeploy:  testing
       deployServer: 127.0.0.1
 - projectname: test4
   gitlocation: https://github.com/jeffvdv/testing.git
   environments:
-    - name: "development"
-      branch: "unstable"
+    - name:  development
+      branch:  unstable
       deployLocation: /var/www/html/
       deployServer: 127.0.0.1
-    - name: "staging"
-      branch: "master"
+    - name:  staging
+      branch:  master
       deployLocation: /data/site/html/
       deployServer: 127.0.0.1
-    - name: "production"
-      fabDeploy: "testing"
+    - name:  production
+      fabDeploy:  testing
       deployServer: 127.0.0.1

@@ -21,7 +21,9 @@ map.each() { p ->
     def deployServer = p.deployServer
     def branch = p.branch
     def deployLocation = p.deployLocation
-
+    if (${environment} == 'production'){
+      def fabDeploy = p.fabDeploy
+    }
     job("${projecttitle}/${projectname}") {
     
     scm {
@@ -29,7 +31,11 @@ map.each() { p ->
     }
 
     steps {
-          shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} `cd ${deployLocation} && git fetch && git reset --hard`")
+          if (${environment} == 'production'){
+             shell("ssh -o StrictHostKeyChecking=no root@${deployServer} `fab ${fabDeploy} deploy restart`")
+          } else {
+             shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} `cd ${deployLocation} && git fetch && git reset --hard`")
+          }
       }
     }
 }

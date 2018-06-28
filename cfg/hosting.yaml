@@ -7,10 +7,11 @@
   deployLocation: /var/www/html/
 - projectname: test2
   gitlocation: https://github.com/jeffvdv/testing.git
-  environment: development
+  environment: production
   deployServer: 127.0.0.1
   branch: master
   deployLocation: /var/www/html/
+  fabDeploy: testing
 - projectname: test3
   gitlocation: https://github.com/jeffvdv/testing.git
   environment: development
@@ -19,7 +20,7 @@
   deployLocation: /var/www/html/
 - projectname: test4
   gitlocation: https://github.com/jeffvdv/testing.git
-  environment: development
+  environment: staging
   deployServer: 127.0.0.1
   branch: master
   deployLocation: /var/www/html/
@@ -31,7 +32,8 @@
   deployLocation: /var/www/html/
 - projectname: test6
   gitlocation: https://github.com/jeffvdv/testing.git
-  environment: development
+  environment: production
   deployServer: 127.0.0.1
   branch: master
   deployLocation: /var/www/html/
+  fabDeploy: testing2

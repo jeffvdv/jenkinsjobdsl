@@ -3,37 +3,37 @@
   gitlocation: https://github.com/jeffvdv/testing.git
   environment: development
   deployServer: 127.0.0.1
-  branch: 'master'
+  branch: master
   deployLocation: /var/www/html/
 - projectname: test2
   gitlocation: https://github.com/jeffvdv/testing.git
   environment: production
   deployServer: 127.0.0.1
-  branch: 'master'
+  branch: master
   deployLocation: /var/www/html/
   fabDeploy: testing
 - projectname: test3
   gitlocation: https://github.com/jeffvdv/testing.git
   environment: development
   deployServer: 127.0.0.1
-  branch: 'master'
+  branch: master
   deployLocation: /var/www/html/
 - projectname: test4
   gitlocation: https://github.com/jeffvdv/testing.git
   environment: staging
   deployServer: 127.0.0.1
-  branch: 'master'
+  branch: master
   deployLocation: /var/www/html/
 - projectname: test5
   gitlocation: https://github.com/jeffvdv/testing.git
   environment: development
   deployServer: 127.0.0.1
-  branch: 'master'
+  branch: master
   deployLocation: /var/www/html/
 - projectname: test6
   gitlocation: https://github.com/jeffvdv/testing.git
   environment: production
   deployServer: 127.0.0.1
-  branch: 'master'
+  branch: master
   deployLocation: /var/www/html/
   fabDeploy: testing2

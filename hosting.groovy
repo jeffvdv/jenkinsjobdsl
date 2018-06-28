@@ -21,7 +21,7 @@ map.each() { p ->
     def deployLocation = p.deployLocation
     def fabDeploy
 
-    $environments.each { env ->
+    environments.each { env ->
 
         if ("${env}" == 'production'){
           fabDeploy = p.fabDeploy

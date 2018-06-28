@@ -15,48 +15,52 @@ map = configFileYaml.load(configFile)
 map.each() { p ->
     def projectname = p.projectname
     def gitlocation = p.gitlocation
-    def environment = p.environment
+    def environments = p.environments
     def deployServer = p.deployServer
     def branchname = p.branch
     def deployLocation = p.deployLocation
     def fabDeploy
-    if ("${environment}" == 'production'){
-      fabDeploy = p.fabDeploy
-    }
 
-    folder("${projecttitle} - ${environment}")
+    $environments.each { env ->
 
-    job("${projecttitle} - ${environment}/${projectname}") {
-
-    authorization {
-        permissions('authenticated', [
-            'hudson.model.Item.Build',
-            'hudson.model.Item.Read'
-        ])
-    }
-
-    if ("${environment}" != 'production'){
-       scm {
-            git {
-               branch("$branchname")
-               remote {
-                  credentials("github")
-                  url("${gitlocation}")
-               }
-            }
+        if ("${env}" == 'production'){
+          fabDeploy = p.fabDeploy
         }
 
-       triggers {
-           githubPush()
-       }
-    }
+        folder("${projecttitle} - ${env}")
 
-    steps {
-          if ("${environment}" == 'production'){
-             shell("ssh -o StrictHostKeyChecking=no root@${deployServer} `fab ${fabDeploy} deploy restart`")
-          } else {
-             shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} `cd ${deployLocation} && git fetch && git reset --hard`")
+        job("${projecttitle} - ${env}/${projectname}") {
+
+        authorization {
+            permissions('authenticated', [
+                'hudson.model.Item.Build',
+                'hudson.model.Item.Read'
+            ])
+        }
+
+        if ("${env}" != 'production'){
+           scm {
+                git {
+                   branch("$branchname")
+                   remote {
+                      credentials("github")
+                      url("${gitlocation}")
+                   }
+                }
+            }
+
+           triggers {
+               githubPush()
+           }
+        }
+
+        steps {
+              if ("${env}" == 'production'){
+                 shell("ssh -o StrictHostKeyChecking=no root@${deployServer} `fab ${fabDeploy} deploy restart`")
+              } else {
+                 shell("ssh -o StrictHostKeyChecking=no www-data@${deployServer} `cd ${deployLocation} && git fetch && git reset --hard`")
+              }
           }
-      }
+        }
     }
 }

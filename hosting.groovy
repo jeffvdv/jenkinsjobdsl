@@ -28,7 +28,7 @@ map.each() { p ->
 
     job("${projecttitle} - ${environment}/${projectname}") {
     
-    if (!"${environment}" == 'production'){
+    if ("${environment}" != 'production'){
        scm {
            git("${gitlocation}", "${branch}")
        }

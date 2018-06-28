@@ -41,7 +41,7 @@ map.each() { p ->
                remote {
                   url("${gitlocation}")
                }
-               branch("${branch}")
+//               branch("${branch}")
             }
         }
 

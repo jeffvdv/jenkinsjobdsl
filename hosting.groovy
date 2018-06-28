@@ -38,7 +38,7 @@ map.each() { p ->
     if ("${environment}" != 'production'){
        scm {
             git {
-               branch("${branch}")
+               branch("$branch")
                remote {
                   url("${gitlocation}")
                }

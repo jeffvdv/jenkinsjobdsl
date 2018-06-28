@@ -1,4 +1,3 @@
-
 @Grapes([
     @Grab(group='org.yaml', module='snakeyaml', version='1.17')
 ])
@@ -21,8 +20,9 @@ map.each() { p ->
     def deployServer = p.deployServer
     def branch = p.branch
     def deployLocation = p.deployLocation
+    def fabDeploy
     if ("${environment}" == 'production'){
-      def fabDeploy = p.fabDeploy
+      fabDeploy = p.fabDeploy
     }
     job("${projecttitle}/${projectname}") {
     
